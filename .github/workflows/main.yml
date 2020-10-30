@@ -99,7 +99,7 @@ jobs:
   build_deploy:
     #if conditional to prevent a job from running
     if: github.event_name != 'pull_request'
-    runs-on: windows-latest
+    runs-on: macos-latest
     #Identifies any jobs that must complete successfully before this job will run.
     needs: [drive_ios,drive_android,test]
     name: Build  apk  and web
