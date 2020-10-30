@@ -109,9 +109,7 @@ class HomePage extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         child: SingleChildScrollView(
           child: LayoutBuilder(builder: (context, constraint) {
-            var status;
             if (constraint.maxWidth < 425) {
-              status = Status.mobile;
               return Column(
                 children: [
                   Container(
@@ -154,7 +152,6 @@ class HomePage extends StatelessWidget {
                 ],
               );
             } else if (constraint.maxWidth < 600) {
-              status = Status.tablet;
               return Column(
                 children: [
                   Container(
@@ -197,7 +194,6 @@ class HomePage extends StatelessWidget {
                 ],
               );
             } else {
-              status = Status.desktop;
               return Column(
                 children: [
                   Container(
@@ -394,75 +390,6 @@ class ProjectList extends StatelessWidget {
             ),
           ),
         ),
-      ],
-    );
-  }
-}
-
-class Header extends StatelessWidget {
-  const Header({
-    this.zoomFix,
-    this.status,
-  });
-
-  final TextStyle zoomFix;
-  final Status status;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        FittedBox(
-          child: Text(
-            "AM.",
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 30)
-                .withZoomFix,
-          ),
-          fit: BoxFit.contain,
-        ),
-        status == Status.desktop || status == Status.tablet
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Home",
-                    style: zoomFix,
-                  ),
-                  SizedBox(
-                    width: 60,
-                  ),
-                  Text(
-                    "Project",
-                    style: zoomFix,
-                  ),
-                  SizedBox(
-                    width: 60,
-                  ),
-                  Text(
-                    "Blog",
-                    style: zoomFix,
-                  ),
-                  SizedBox(
-                    width: 60,
-                  ),
-                  GestureDetector(
-                    child: Text(
-                      "About",
-                      style: zoomFix,
-                    ),
-                    onTap: () {
-                      Navigator.pushNamed(context, "/myprofile");
-                    },
-                  )
-                ],
-              )
-            : Container(
-                child: Text(
-                  "Menu",
-                  style: zoomFix,
-                ),
-              )
       ],
     );
   }
