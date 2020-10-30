@@ -99,7 +99,7 @@ jobs:
   build_deploy:
     #if conditional to prevent a job from running
     if: github.event_name != 'pull_request'
-    runs-on: windows-latest
+    runs-on: macos-latest
     #Identifies any jobs that must complete successfully before this job will run.
 #    needs: [drive_ios,drive_android,test]
     needs: [test]
@@ -121,7 +121,7 @@ jobs:
       - run: flutter  config --enable-macos-desktop
       - run: flutter  config --enable-windows-desktop
       #- run: flutter build macos --debug
-      - run: flutter build apk --debug --split-per-abi
+#      - run: flutter build apk --debug --split-per-abi
       # This action will create a github release and optionally upload an artifact to it.
       # https://github.com/ncipollo/release-action
 #      - name: Create a Release APK
@@ -134,7 +134,7 @@ jobs:
       # https://github.com/JamesIves/github-pages-deploy-action
       - uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          GITHUB_TOKEN: ${{ secrets.d6a06d16765c93fd260e982b11971c36bd060b2f }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: build/web
