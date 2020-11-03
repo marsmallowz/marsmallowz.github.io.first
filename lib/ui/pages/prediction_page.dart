@@ -39,7 +39,7 @@ class _PredictionPageState extends State<PredictionPage> {
         itemBuilder: (context, index) {
           var chek =
               diseaseData.where((element) => element["id"] == bagian[index]);
-          print(chek);
+//          print(chek);
           return Center(
             child: Container(
               margin: EdgeInsets.only(bottom: 30),

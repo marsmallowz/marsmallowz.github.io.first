@@ -13,8 +13,7 @@ class HomePage extends StatelessWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     var platform = Theme.of(context).platform;
-    print(screenWidth / 8);
-    print(screenHeight / 3);
+
     var zoomFix = Theme.of(context).textTheme.bodyText1.withZoomFix;
     return Scaffold(
       key: scaffoldKey,

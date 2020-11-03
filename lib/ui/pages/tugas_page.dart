@@ -22,12 +22,12 @@ class _TugasPageState extends State<TugasPage> {
               if (value == false) {
                 setState(() {
                   checkIndication.remove(indicationData[index]['id']);
-                  print(checkIndication);
+//                  print(checkIndication);
                 });
               } else {
                 setState(() {
                   checkIndication.add(indicationData[index]['id']);
-                  print(checkIndication);
+//                  print(checkIndication);
                 });
               }
             },
