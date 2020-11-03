@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-extension on TextStyle {
-  TextStyle get withZoomFix => copyWith(wordSpacing: 0);
-}
+part of 'pages.dart';
 
 class ProfilePage extends StatelessWidget {
   @override

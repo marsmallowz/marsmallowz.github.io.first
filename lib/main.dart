@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:personal_web/ui/pages/pages.dart';
-import 'package:personal_web/ui/pages/profile_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,10 +20,27 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
             bodyText1: Theme.of(context).textTheme.bodyText1.withZoomFix),
       ),
+
+      onGenerateRoute: (settings) {
+        if (settings.name == '/prediction') {
+          final ScreenArguments args = settings.arguments;
+          return MaterialPageRoute(
+            builder: (context) {
+              return PredictionPage(
+                indication: args.prediction,
+              );
+            },
+          );
+        }
+        assert(false, 'Need to implement ${settings.name}');
+        return null;
+      },
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
         '/myprofile': (context) => ProfilePage(),
+        '/tugas': (context) => TugasPage(),
+//        '/prediction': (context) => PredictionPage(),
       },
 //      home: HomePage(),
     );

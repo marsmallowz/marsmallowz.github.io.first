@@ -21,10 +21,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         title: FittedBox(
-          child: Text(
-            "AM.",
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 30)
-                .withZoomFix,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/tugas');
+            },
+            child: Text(
+              "AM.",
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 30)
+                  .withZoomFix,
+            ),
           ),
           fit: BoxFit.contain,
         ),
