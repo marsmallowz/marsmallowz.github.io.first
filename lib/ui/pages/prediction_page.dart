@@ -34,80 +34,73 @@ class _PredictionPageState extends State<PredictionPage> {
       bagian.add('BD');
     }
     return Scaffold(
-      body: Container(
-        child: ListView.builder(
-          itemCount: bagian.length,
-          itemBuilder: (context, index) {
-            var chek =
-                diseaseData.where((element) => element["id"] == bagian[index]);
-            print(chek);
-            return Center(
-              child: Flexible(
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 30),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  width: 500,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+      body: ListView.builder(
+        itemCount: bagian.length,
+        itemBuilder: (context, index) {
+          var chek =
+              diseaseData.where((element) => element["id"] == bagian[index]);
+          print(chek);
+          return Center(
+            child: Container(
+              margin: EdgeInsets.only(bottom: 30),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              width: 500,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 //            Image.asset('myphotoprofile.png'),
-                      Center(
-                          child: Container(
-                        margin: EdgeInsets.only(bottom: 5),
-                        child: Text(
-                          chek.elementAt(0)["name"],
-                          style: TextStyle(fontWeight: FontWeight.w700)
-                              .withZoomFix,
-                        ),
-                      )),
-                      Row(
-                        children: [
-                          Text(
-                            "Affected Part :",
-                            style: TextStyle(fontWeight: FontWeight.w600)
-                                .withZoomFix,
-                          ),
-                          Text(
-                            chek.elementAt(0)["id"] == "BLB" ||
-                                    chek.elementAt(0)["id"] == "BLS" ||
-                                    chek.elementAt(0)["id"] == "LB" ||
-                                    chek.elementAt(0)["id"] == "BD"
-                                ? "Daun "
-                                : chek.elementAt(0)["id"] == "HP"
-                                    ? "Batang"
-                                    : "Malai",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle().withZoomFix,
-                          ),
-                        ],
-                      ),
+                  Center(
+                      child: Container(
+                    margin: EdgeInsets.only(bottom: 5),
+                    child: Text(
+                      chek.elementAt(0)["name"],
+                      style: TextStyle(fontWeight: FontWeight.w700).withZoomFix,
+                    ),
+                  )),
+                  Row(
+                    children: [
                       Text(
-                        "Description",
+                        "Affected Part :",
                         style:
                             TextStyle(fontWeight: FontWeight.w600).withZoomFix,
                       ),
                       Text(
-                        chek.elementAt(0)["description"],
-                        textAlign: TextAlign.justify,
-                        style: TextStyle().withZoomFix,
-                      ),
-                      Text(
-                        "Treatment",
-                        style:
-                            TextStyle(fontWeight: FontWeight.w600).withZoomFix,
-                      ),
-                      Text(
-                        chek.elementAt(0)["treatment"],
+                        chek.elementAt(0)["id"] == "BLB" ||
+                                chek.elementAt(0)["id"] == "BLS" ||
+                                chek.elementAt(0)["id"] == "LB" ||
+                                chek.elementAt(0)["id"] == "BD"
+                            ? "Daun "
+                            : chek.elementAt(0)["id"] == "HP"
+                                ? "Batang"
+                                : "Malai",
                         textAlign: TextAlign.justify,
                         style: TextStyle().withZoomFix,
                       ),
                     ],
                   ),
-                ),
+                  Text(
+                    "Description",
+                    style: TextStyle(fontWeight: FontWeight.w600).withZoomFix,
+                  ),
+                  Text(
+                    chek.elementAt(0)["description"],
+                    textAlign: TextAlign.justify,
+                    style: TextStyle().withZoomFix,
+                  ),
+                  Text(
+                    "Treatment",
+                    style: TextStyle(fontWeight: FontWeight.w600).withZoomFix,
+                  ),
+                  Text(
+                    chek.elementAt(0)["treatment"],
+                    textAlign: TextAlign.justify,
+                    style: TextStyle().withZoomFix,
+                  ),
+                ],
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
