@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/myprofile': (context) => ProfilePage(),
         '/tugas': (context) => TugasPage(),
-//        '/prediction': (context) => PredictionPage(),
+//        '/tugas': (context) => TugasPage(),
       },
 //      home: HomePage(),
     );

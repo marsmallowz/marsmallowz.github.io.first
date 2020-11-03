@@ -254,12 +254,14 @@ class HomePage extends StatelessWidget {
                 height: 250,
                 width: 250,
                 decoration: BoxDecoration(
+                  shape: BoxShape.circle,
                   image: DecorationImage(
                       //AssetImage
                       image: AssetImage(platform == TargetPlatform.android
                           ? "assets/myphotoprofile.png"
-                          : "myphotoprofile.png"),
-                      fit: BoxFit.none),
+                          : "squidword.jpg"),
+//                      fit: BoxFit.none
+                      fit: BoxFit.fill),
                 ),
               ),
               Text(
