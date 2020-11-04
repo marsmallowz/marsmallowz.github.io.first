@@ -61,7 +61,8 @@ final diseaseData = {
     'description':
         "Penyakit yang disebabkan oleh Bakteri Xanthomonas campestris yang menyerang daun",
     'treatment':
-        "Penyakit hawar daun ,penanggulangan dengan pilih varietas yang tahan, pemupukan lengkap dan pengaturan air yang baik"
+        "Penyakit hawar daun, penanggulangan dengan pilih varietas yang tahan, pemupukan lengkap dan pengaturan air yang baik",
+    'image': "gambar_penyakit_padi/HawarDaun.jpg"
   },
   {
     'id': "BLS",
@@ -69,22 +70,25 @@ final diseaseData = {
     'description':
         "Penyakit yang disebabkan oleh Bakteri Xanthomonas campestris yang menyerang daun",
     'treatment':
-        "Penyakit Daun Bergaris, penanggulangan dengan buang atau hancurkan tunggul-tunggul dan jerami-jerami yang terinfeksi/sakit,gunakan pupuk nitrogen sesuai anjuran, atur jarak tanam tidak terlalu rapat."
+        "Penyakit Daun Bergaris, penanggulangan dengan buang atau hancurkan tunggul-tunggul dan jerami-jerami yang terinfeksi/sakit,gunakan pupuk nitrogen sesuai anjuran, atur jarak tanam tidak terlalu rapat.",
+    'image': "gambar_penyakit_padi/BakteriDaunBergaris.jpg"
   },
   {
     'id': "HP",
-    'name': "Hawar Pelapah",
+    'name': "Hawar Pelepah",
     'description':
         "Penyakit yang disebabkan oleh jamur Rhizoctonia solani yang menyerang batang/pelepah",
     'treatment':
-        "Penyakit hawar pelepah, penanggulangan dengan pemupukan tanaman dengan dosis 250 kg urea, 100 kg SP36 dan 100 kg KCL per Ha, atur pertanaman agar jangan terlalu rapat, buang gulma dan tanaman yang sakit, gunakan fungisida (bila diperlukan) antara lain yang berbahan aktif: difenokonazol."
+        "Penyakit hawar pelepah, penanggulangan dengan pemupukan tanaman dengan dosis 250 kg urea, 100 kg SP36 dan 100 kg KCL per Ha, atur pertanaman agar jangan terlalu rapat, buang gulma dan tanaman yang sakit, gunakan fungisida (bila diperlukan) antara lain yang berbahan aktif: difenokonazol.",
+    'image': "gambar_penyakit_padi/HawarPelepah.jpg"
   },
   {
     'id': "LB",
     'name': "Blast Daun",
     'description': "Penyakit yang disebabkan oleh  jamur Pyricularia grisea",
     'treatment':
-        "Penyakit blast daun, penanggulangan dengan penanaman varietas tahan secara bergantian, pemupukan NPK yang tepat, perlakuan yang baik pada benih."
+        "Penyakit blast daun, penanggulangan dengan penanaman varietas tahan secara bergantian, pemupukan NPK yang tepat, perlakuan yang baik pada benih.",
+    'image': "gambar_penyakit_padi/BlastPadaDaun.jpg"
   },
   {
     'id': "NB",
@@ -92,13 +96,15 @@ final diseaseData = {
     'description':
         "Penyakit yang disebabkan oleh jamur Pyricularia grisea dan menyerang leher malai",
     'treatment':
-        "Penyakit blast leher, penanggulangan dengan penanaman varietas tahan secara bergantian, pemupukan NPK yang tepat, perlakuan yang baik pada benih."
+        "Penyakit blast leher, penanggulangan dengan penanaman varietas tahan secara bergantian, pemupukan NPK yang tepat, perlakuan yang baik pada benih.",
+    'image': "gambar_penyakit_padi/BlastPadaLeher.jpg"
   },
   {
     'id': "BD",
     'name': "Bercak Daun",
     'description': "Penyakit yang disebabkan oleh jamur Cercospora oryzae",
     'treatment':
-        "Penyakit bercak daun, penanggulangan dengan cara pemupukan berimbang yang lengkap dengan dosis 250 kg urea, 100 kg SP36 dan 100 kg KCL per Ha."
+        "Penyakit bercak daun, penanggulangan dengan cara pemupukan berimbang yang lengkap dengan dosis 250 kg urea, 100 kg SP36 dan 100 kg KCL per Ha.",
+    'image': "gambar_penyakit_padi/BercakPadaDaun.jpg"
   }
 }.toList();

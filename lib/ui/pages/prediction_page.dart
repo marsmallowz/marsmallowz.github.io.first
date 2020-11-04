@@ -42,19 +42,26 @@ class _PredictionPageState extends State<PredictionPage> {
 //          print(chek);
           return Center(
             child: Container(
-              margin: EdgeInsets.only(bottom: 30),
+              margin: EdgeInsets.only(bottom: 10, top: 20),
               padding: EdgeInsets.symmetric(horizontal: 20),
               width: 500,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-//            Image.asset('myphotoprofile.png'),
+                  Center(
+                    child: Image.asset(
+                      chek.elementAt(0)["image"],
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   Center(
                       child: Container(
-                    margin: EdgeInsets.only(bottom: 5),
+                    margin: EdgeInsets.only(bottom: 5, top: 5),
                     child: Text(
                       chek.elementAt(0)["name"],
-                      style: TextStyle(fontWeight: FontWeight.w700).withZoomFix,
+                      style:
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 18)
+                              .withZoomFix,
                     ),
                   )),
                   Row(
