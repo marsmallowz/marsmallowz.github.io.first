@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "ae6ec7e100fa218a70c1a7006c2c1b64",
-"index.html": "c6c6f83ad1d5126b772ad3a5eea49d42",
-"/": "c6c6f83ad1d5126b772ad3a5eea49d42",
-"main.dart.js": "f997695217357ac740c3b687b3afeda3",
+"index.html": "6a55dcb8902517c8d659055d8b5f42b6",
+"/": "6a55dcb8902517c8d659055d8b5f42b6",
+"main.dart.js": "52c93f8095ace3152951fe707234726a",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
@@ -22,7 +22,7 @@ const RESOURCES = {
 "assets/web/assets/myphotoprofile.png": "a6bf53b9045bf5fc810fb250d830f097",
 "assets/web/assets/squidword.jpg": "4f6343d9af63847424f3fed6eb33e30c",
 "assets/AssetManifest.json": "cfca41630556aaccbfcdff4d51a719d8",
-"assets/NOTICES": "117408a19adad9b5d6a7de9bf710e32c",
+"assets/NOTICES": "632a579a8423369fc5905963f2f0e916",
 "assets/FontManifest.json": "5a32d4310a6f5d9a6b651e75ba0d7372",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "d80ca32233940ebadc5ae5372ccd67f9",
