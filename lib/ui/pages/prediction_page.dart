@@ -11,6 +11,8 @@ class PredictionPage extends StatefulWidget {
 
 class _PredictionPageState extends State<PredictionPage> {
   List bagian = [];
+  List k = [];
+  List bagianPadi = [];
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,60 @@ class _PredictionPageState extends State<PredictionPage> {
     if (contain('M')) {
       bagian.add('BD');
     }
+    /////////////////////////////////////////////////////////////////////////
+    if (bagian.contains("BLB") && bagian.contains("BLS")) {
+      bagian.remove("BLS");
+      k.add("BLB");
+    } else if (bagian.contains("BLB")) {
+      k.add("BLB");
+    }
+    if (bagian.contains("BLS") &&
+        !bagian.contains("BLB") &&
+        bagian.contains("LB") &&
+        bagian.contains("BD")) {
+      bagian.remove("LB");
+      bagian.remove("BD");
+      k.add("BLS");
+    } else if (bagian.contains("BLS")) {
+      k.add("BLS");
+    }
+    if (bagian.contains("LB")) {
+      k.add("LB");
+    }
+    if (bagian.contains("BD")) {
+      k.add("BD");
+    }
+    if (bagian.contains("HP")) {
+      k.add("HP");
+    }
+    if (bagian.contains("NB")) k.add("NB");
+
+    if (bagian.contains("BLB") ||
+        bagian.contains("BLB") ||
+        bagian.contains("LB") ||
+        bagian.contains("BD")) bagianPadi.add("daun");
+    if (bagian.contains("HP")) bagianPadi.add("batang");
+    if (bagian.contains("NB")) bagianPadi.add("malai");
+
+    String getSick(List list) {
+      if (list.length == 3) {
+        return "${list[0]}, ${list[1]} dan ${list[2]}";
+      } else if (list.length == 2) {
+        return "${list[0]} dan ${list[1]}";
+      } else {
+        return "${list[0]}";
+      }
+    }
+
+    print(k);
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Bagian yang terserang: ${getSick(bagianPadi)}"),
+      ),
       body: ListView.builder(
         itemCount: bagian.length,
         itemBuilder: (context, index) {
-          var chek =
-              diseaseData.where((element) => element["id"] == bagian[index]);
-//          print(chek);
+          var chek = diseaseData.where((element) => element["id"] == k[index]);
           return Center(
             child: Container(
               margin: EdgeInsets.only(bottom: 10, top: 20),
@@ -53,6 +102,33 @@ class _PredictionPageState extends State<PredictionPage> {
                       chek.elementAt(0)["image"],
                       fit: BoxFit.cover,
                     ),
+//                    child: Container(
+//                      height: 300,
+//                      width: 300,
+//                      child: DecoratedBox(
+//                        decoration: BoxDecoration(
+//                          color: Colors.white,
+//                          border: Border.all(),
+//                          borderRadius: BorderRadius.circular(20),
+//                        ),
+//                        child: Image.network(
+//                          'https://images.unsplash.com/photo-1541332246502-2e99eaa96cc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+//                          loadingBuilder: (BuildContext context, Widget child,
+//                              ImageChunkEvent loadingProgress) {
+//                            if (loadingProgress == null) return child;
+//                            return Center(
+//                              child: CircularProgressIndicator(
+//                                value: loadingProgress.expectedTotalBytes !=
+//                                        null
+//                                    ? loadingProgress.cumulativeBytesLoaded /
+//                                        loadingProgress.expectedTotalBytes
+//                                    : null,
+//                              ),
+//                            );
+//                          },
+//                        ),
+//                      ),
+//                    ),
                   ),
                   Center(
                       child: Container(
@@ -67,7 +143,7 @@ class _PredictionPageState extends State<PredictionPage> {
                   Row(
                     children: [
                       Text(
-                        "Affected Part :",
+                        "Bagian yang terserang :",
                         style:
                             TextStyle(fontWeight: FontWeight.w600).withZoomFix,
                       ),
@@ -86,7 +162,7 @@ class _PredictionPageState extends State<PredictionPage> {
                     ],
                   ),
                   Text(
-                    "Description",
+                    "Deskripsi",
                     style: TextStyle(fontWeight: FontWeight.w600).withZoomFix,
                   ),
                   Text(
@@ -95,7 +171,7 @@ class _PredictionPageState extends State<PredictionPage> {
                     style: TextStyle().withZoomFix,
                   ),
                   Text(
-                    "Treatment",
+                    "Penanggulangan",
                     style: TextStyle(fontWeight: FontWeight.w600).withZoomFix,
                   ),
                   Text(

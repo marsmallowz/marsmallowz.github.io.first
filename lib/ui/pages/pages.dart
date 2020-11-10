@@ -8,3 +8,4 @@ part 'home_page.dart';
 part 'profile_page.dart';
 part 'tugas_page.dart';
 part 'prediction_page.dart';
+part 'about_page.dart';

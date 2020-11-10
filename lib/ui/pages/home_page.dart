@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                         style: zoomFix,
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, "/myprofile");
+                        Navigator.pushNamed(context, "/about");
                       },
                     ),
                     SizedBox(
@@ -95,8 +95,7 @@ class HomePage extends StatelessWidget {
             ListTile(
               title: Text('Item 1'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.pushNamed(context, "/about");
               },
             ),
             ListTile(
@@ -276,6 +275,7 @@ class HomePage extends StatelessWidget {
                         .withZoomFix,
               ),
               AllButtonSocialMedia(
+                color: Colors.grey,
                 size: fontSize - 7,
               ),
             ],
@@ -402,8 +402,9 @@ class ProjectList extends StatelessWidget {
 }
 
 class AllButtonSocialMedia extends StatelessWidget {
+  final Color color;
   final double size;
-  const AllButtonSocialMedia({this.size});
+  const AllButtonSocialMedia({this.size, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -414,21 +415,25 @@ class AllButtonSocialMedia extends StatelessWidget {
           icon: FaIcon(FontAwesomeIcons.instagram),
           url: "https://www.facebook.com/alsandymaulana/",
           size: size,
+          color: color,
         ),
         IconButtonSocialMedia(
           icon: FaIcon(FontAwesomeIcons.facebook),
           url: "https://www.facebook.com/alsandymaulana/",
           size: size,
+          color: color,
         ),
         IconButtonSocialMedia(
           icon: FaIcon(FontAwesomeIcons.linkedin),
           url: "https://www.facebook.com/alsandymaulana/",
           size: size,
+          color: color,
         ),
         IconButtonSocialMedia(
           icon: FaIcon(FontAwesomeIcons.github),
           url: "https://www.facebook.com/alsandymaulana/",
           size: size,
+          color: color,
         ),
       ],
     );
