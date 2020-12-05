@@ -57,7 +57,11 @@ class _AboutPageState extends State<AboutPage> {
                       textAlign: TextAlign.justify,
                     ),
                     Container(
+                      margin: EdgeInsets.symmetric(vertical: 5),
                       height: MediaQuery.of(context).size.height / 3,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50)),
+                      child: getMap(),
                     ),
                     AllButtonSocialMedia(
                       color: Colors.white,
